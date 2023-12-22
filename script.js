@@ -148,21 +148,29 @@ function moveCellsVertical(istart, jstart, iend, jend, jInc, prevStart, inc){
 function moveUp(){
     moves++;
     moveCellsVertical(0, 1, 4, 4, 1, 0, 1);
+    updateMoves();
 }
 
 function moveDown(){
     moves++;
     moveCellsVertical(0, 2, 4, -1, -1, 3, -1);
+    updateMoves();
 }
 
 function moveLeft(){
     moves++;
     moveCellsHorizontal(0, 1, 4, 4, 1, 0, 1);
+    updateMoves();
 }
 
 function moveRight(){
     moves++;
     moveCellsHorizontal(0, 2, 4, -1, -1, 3, -1);
+    updateMoves();
+}
+
+function updateMoves(){
+    document.getElementById('moves').innerHTML = moves;
 }
 
 window.addEventListener('keydown', event =>{
@@ -181,6 +189,6 @@ window.addEventListener('keydown', event =>{
     if(event.code === 'ArrowRight' || event.code === 'KeyD'){
         moveRight();
     }
-    document.getElementById('moves').innerHTML = moves;
+    updateMoves();
     // console.table(board);
 })

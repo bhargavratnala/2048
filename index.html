@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="messageDiv" id="messageDiv">
+        <div class="messageDiv__message__title">Game Over!</div>
+        <div class="messageDiv__message__moves">Your Moves: <span id="totalmoves">0</span></div>
+        <div class="restartButton" id="restartButton" onclick="window.location.reload()">restart game</div>
+    </div>
     <div class="gameBoard">
         <div class="gameBoard__header">
             <div class="gameBoard__header__title">2048</div>
@@ -29,6 +34,20 @@
             <div class="cell" id="cell14"></div>
             <div class="cell" id="cell15"></div>
             <div class="cell" id="cell16"></div>
+        </div>
+        <div class="gestureButtons">
+            <div class="gestureButtons__up" id="upButton" onclick=moveUp()>
+                <img src="./arrow-up.png" alt="arrow up">
+            </div>
+            <div class="gestureButtons__down" id="downButton" onclick=moveDown()>
+                <img src="./arrow-down.png" alt="arrow down">
+            </div>
+            <div class="gestureButtons__left" id="leftButton" onclick=moveLeft()>
+                <img src="./arrow-left.png" alt="arrow left">
+            </div>
+            <div class="gestureButtons__right" id="rightButton" onclick=moveRight()>
+                <img src="./arrow-right.png" alt="arrow right">
+            </div>
         </div>
     </div>
 </body>

@@ -25,6 +25,8 @@ function addNumber(){
     }
     if(emptyList.length === 0){
         gameover = true;
+        document.getElementById('totalmoves').innerHTML = moves;
+        document.getElementById('messageDiv').style.display = 'flex';
         return;
     }
     let randomIndex = Math.floor(Math.random() * emptyList.length);
@@ -143,22 +145,41 @@ function moveCellsVertical(istart, jstart, iend, jend, jInc, prevStart, inc){
     addNumber();
 }
 
+function moveUp(){
+    moves++;
+    moveCellsVertical(0, 1, 4, 4, 1, 0, 1);
+}
+
+function moveDown(){
+    moves++;
+    moveCellsVertical(0, 2, 4, -1, -1, 3, -1);
+}
+
+function moveLeft(){
+    moves++;
+    moveCellsHorizontal(0, 1, 4, 4, 1, 0, 1);
+}
+
+function moveRight(){
+    moves++;
+    moveCellsHorizontal(0, 2, 4, -1, -1, 3, -1);
+}
+
 window.addEventListener('keydown', event =>{
+    if(gameover){
+        return;
+    }
     if(event.code === 'ArrowUp' || event.code === 'KeyW'){
-        moveCellsVertical(0, 1, 4, 4, 1, 0, 1)
-        moves++;
+        moveUp();
     }
     if(event.code === 'ArrowDown' || event.code === 'KeyS'){
-        moveCellsVertical(0, 2, 4, -1, -1, 3, -1)
-        moves++;
+        moveDown();
     }
     if(event.code === 'ArrowLeft' || event.code === 'KeyA'){
-        moveCellsHorizontal(0, 1, 4, 4, 1, 0, 1);
-        moves++;
+        moveLeft();
     }
     if(event.code === 'ArrowRight' || event.code === 'KeyD'){
-        moveCellsHorizontal(0, 2, 4, -1, -1, 3, -1);
-        moves++;
+        moveRight();
     }
     document.getElementById('moves').innerHTML = moves;
     // console.table(board);

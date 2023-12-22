@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000000c8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gameBoard{
+    --width: 500px;
+    width: var(--width);
+    padding: 5px;
+    box-shadow: 0 0 10px #ffffffae;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameBoard__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.gameBoard_body{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.cell{
+    width: calc((var(--width) - 50px) / 4);
+    height: calc((var(--width) - 50px) / 4);
+    background-color: #00000075;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #808080;
+    transition: all 0.3s ease-in-out;
+}
+
+.val2{
+    background-color: #eee4da;
+    color: #776e65;
+}
+
+.val4{
+    background-color: #ede0c8;
+    color: #776e65;
+}
+
+.val8{
+    background-color: #f2b179;
+    color: #fff;
+}
+
+.val16{
+    background-color: #f59563;
+    color: #fff;
+}
+
+.val32{
+    background-color: #f67c5f;
+    color: #fff;
+}
+
+.val64{
+    background-color: #f65e3b;
+    color: #fff;
+}
+
+.val128{
+    background-color: #edcf72;
+    color: #fff;
+}
+
+.val256{
+    background-color: #edcc61;
+    color: #fff;
+}
+
+.val512{
+    background-color: #edc850;
+    color: #fff;
+}
+
+.val1024{
+    background-color: #edc53f;
+    color: #fff;
+}
+
+.val2048{
+    background-color: #edc22e;
+    color: #fff;
+}
+
+@media screen and (max-width: 550px){
+    .gameBoard{
+        --width: 300px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .gameBoard{
+        --width: 250px;
+    }
+}
